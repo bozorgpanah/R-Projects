@@ -16,11 +16,13 @@ test_set = subset(dataset, split == FALSE)
 # test_set = scale(test_set)
 
 # Fitting Simple Linear Regression to the Training set
-regressor = lm(formula = Salary ~ YearsExperience,
-               data = training_set)
+regressor = lm(formula = Salary ~ YearsExperience, data = training_set)
 
 # Predicting the Test set results
 y_pred = predict(regressor, newdata = test_set)
+
+## If the "ggplot" has not been already installed 
+#install.packages("ggplot2")
 
 # Visualising the Training set results
 library(ggplot2)
